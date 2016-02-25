@@ -73,6 +73,20 @@ You can use both forms together, as in:
         "<selector2>": "<path2>"
     }
 
+## Additional long notation options
+
+    `unidirectional` type: boolean. when true creates one way (model to page) data binding
+    `method` type: function. The function used to access the page element. Must have signature of `function(element, value)`.
+
+    bindings: {
+        "<key>": {
+            selector: "<selector1>",
+            path:     "<path1>",
+            unidirectional: true|false,
+            method: <fluid.value|fluid.text|fluid.html>
+        }
+    }
+
 
 
 # Static Functions
