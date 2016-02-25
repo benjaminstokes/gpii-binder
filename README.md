@@ -87,7 +87,16 @@ You can use both forms together, as in:
 * requires signature of `function(element, value)`  
 * Suggested: `fluid.value`, `fluid.text`, `fluid.html`
 
+The additional options look like:
 
+    bindings: {
+        "<key>": {
+            selector: "<selector1>",
+            path:     "<path1>",
+            unidirectional: <boolean>,
+            method: <function(element, value)>
+        }
+    }
 # Static Functions
 
 ## `gpii.binder.applyBinding(component)`
