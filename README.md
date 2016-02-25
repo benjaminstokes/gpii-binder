@@ -81,11 +81,12 @@ You can use both forms together, as in:
 * default: false  
 
 
-`method` - The function used to access the page element  
-* type: function  
-* default: fluid.value  
+`method` - The function name as string to access the page element. The function name must be resolvable by `fluid.getGlobalValue`
+
+* type: string  
+* default: "fluid.value" 
 * requires signature of `function(element, value)`  
-* Suggested: `fluid.value`, `fluid.text`, `fluid.html`
+* Suggested: `"fluid.value"`, `"fluid.text"`, `"fluid.html"`
 
 The additional options look like:
 
@@ -94,7 +95,7 @@ The additional options look like:
             selector: "<selector1>",
             path:     "<path1>",
             unidirectional: <boolean>,
-            method: <function(element, value)>
+            method: "<functionname>"
         }
     }
 # Static Functions
