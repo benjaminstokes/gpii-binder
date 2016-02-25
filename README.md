@@ -79,7 +79,7 @@ You can use both forms together, as in:
 * type: boolean. 
 * default: false
 
-`method` - The function used to access the page element.
+`method` - The function used to access the page element
 * type: function. 
 * default: fluid.value
 * requires signature of `function(element, value)`
