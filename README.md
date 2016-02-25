@@ -82,7 +82,7 @@ You can use both forms together, as in:
 `method` - The function used to access the page element.
 * type: function. 
 * default: fluid.value
-* Must have signature of `function(element, value)`.
+* requires signature of `function(element, value)`
 
     bindings: {
         "<key>": {
