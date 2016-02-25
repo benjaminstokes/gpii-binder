@@ -79,21 +79,22 @@ You can use both forms together, as in:
 * type: boolean.  
 * default: false  
 
+
 `method` - The function used to access the page element  
 * type: function  
-* default: fluid.value  
+* default: fluid.value 
 * requires signature of `function(element, value)`  
-
-    bindings: {  
-        "<key>": {  
-            selector: "<selector1>",  
-            path:     "<path1>",  
-            unidirectional: true|false,  
-            method: <fluid.value|fluid.text|fluid.html>  
-        }  
-    }  
+* Suggested: `fluid.value`, `fluid.text`, `fluid.html`
 
 
+    bindings: {
+        "<key>": {
+            selector: "<selector1>",
+            path:     "<path1>",
+            unidirectional: <boolean>,
+            method: <function pointer>
+        },
+    }
 
 # Static Functions
 
