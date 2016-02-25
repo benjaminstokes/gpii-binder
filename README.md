@@ -75,23 +75,23 @@ You can use both forms together, as in:
 
 ## Additional long notation options
 
-`unidirectional` when true creates one way (model to page) data binding
-* type: boolean. 
-* default: false
+`unidirectional` when true creates one way (model to page) data binding  
+* type: boolean.  
+* default: false  
 
-`method` - The function used to access the page element
-* type: function. 
-* default: fluid.value
-* requires signature of `function(element, value)`
+`method` - The function used to access the page element  
+* type: function  
+* default: fluid.value  
+* requires signature of `function(element, value)`  
 
-    bindings: {
-        "<key>": {
-            selector: "<selector1>",
-            path:     "<path1>",
-            unidirectional: true|false,
-            method: <fluid.value|fluid.text|fluid.html>
-        }
-    }
+    bindings: {  
+        "<key>": {  
+            selector: "<selector1>",  
+            path:     "<path1>",  
+            unidirectional: true|false,  
+            method: <fluid.value|fluid.text|fluid.html>  
+        }  
+    }  
 
 
 
