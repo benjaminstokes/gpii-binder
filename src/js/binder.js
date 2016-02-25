@@ -29,7 +29,7 @@
             var path = typeof value === "string" ? value : value.path;
             var selector = typeof value === "string" ? key : value.selector;
             var unidirectional = typeof value === "string" ? false : value.unidirectional || false;
-            var elementAccessFunction = typeof value === "string" ? "value" : value.method || fluid.value;
+            var elementAccessFunction = typeof value === "string" ? "value" : fluid.getGlobalValue(value.method) || fluid.value;
 
             var element = that.locate(selector);
 
