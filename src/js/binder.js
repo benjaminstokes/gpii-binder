@@ -67,7 +67,7 @@
                     elementAccessFunction(element, initialModelValue);
                 }
                 // If we have no model data, but there are defaults in the markup, using them to update the model.
-                else {
+                else if (!unidirectional) {
                     var initialFormValue = elementAccessFunction(element);
                     if (initialFormValue) {
                         that.applier.change(path, initialFormValue);

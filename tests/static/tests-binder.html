@@ -89,6 +89,36 @@
                     </form>
                 </div>
 
+                <!-- markup for "long notation w/ unidirectional=true" tests -->
+                <h2>Long Unidirectional Notation</h2>
+                <div class="viewport-long-unidirectional">
+                    <form>
+                        <input type="text" name="init-from-model"/>
+                        <input type="text" name="init-from-markup" value="initialized from markup"/>
+                        <input type="text" name="update-from-model"/>
+                        <input type="text" name="update-from-markup"/>
+                    </form>
+                </div>
+
+                <!-- markup for "long notation w/ unidirectional=true using fluid.text" tests -->
+                <h2>Long Unidirectional Text Notation</h2>
+                <div class="viewport-long-unidirectional-text">
+                    <span class="init-from-model"></span>
+                    <span class="init-from-markup">initialized from markup</span>
+                    <span class="update-from-model"></span>
+                    <span class="update-from-markup"></span>
+                </div>
+
+                <!-- markup for "long notation w/ unidirectional=true using fluid.html" tests -->
+                <h2>Long Unidirectional HTML Notation</h2>
+                <div class="viewport-long-unidirectional-html">
+                    <div class="init-from-model"></div>
+                    <div class="init-from-markup">initialized from markup</div>
+                    <div class="update-from-model"></div>
+                    <div class="update-from-markup"></div>
+                </div>
+
+
                 <!-- markup for "short notation" tests -->
                 <h2>Short Notation</h2>
                 <div class="viewport-short">
@@ -99,6 +129,37 @@
                         <input type="text" name="update-from-markup"/>
                     </form>
                 </div>
+
+                <!-- markup for "short notation" tests -->
+                <h2>Short Notation Unidirectional</h2>
+                <div class="viewport-short-unidirectional">
+                    <form>
+                        <input type="text" name="init-from-model"/>
+                        <input type="text" name="init-from-markup" value="initialized from markup"/>
+                        <input type="text" name="update-from-model"/>
+                        <input type="text" name="update-from-markup"/>
+                    </form>
+                </div>
+
+                <!-- markup for "short notation w/ unidirectional=true using fluid.text" tests -->
+                <h2>Short Unidirectional Text Notation</h2>
+                <div class="viewport-short-unidirectional-text">
+                    <span class="init-from-model"></span>
+                    <span class="init-from-markup">initialized from markup</span>
+                    <span class="update-from-model"></span>
+                    <span class="update-from-markup"></span>
+                </div>
+
+                <!-- markup for "short notation w/ unidirectional=true using fluid.html" tests -->
+                <h2>Short Unidirectional HTML Notation</h2>
+                <div class="viewport-short-unidirectional-html">
+                    <div class="init-from-model"></div>
+                    <div class="init-from-markup">initialized from markup</div>
+                    <div class="update-from-model"></div>
+                    <div class="update-from-markup"></div>
+                </div>
+
+
 
                 <!-- markup for "short notation" tests -->
                 <h2>To Be Cleared</h2>
@@ -210,7 +271,13 @@
         <script type="text/javascript">
             <!-- instantiate test components -->
             var long        = gpii.tests.binder.long(".viewport-long");
+            var longUni     = gpii.tests.binder.long.unidirectional(".viewport-long-unidirectional");
+            var longUnidirectionalText = gpii.tests.binder.long.unidirectional.text(".viewport-long-unidirectional-text");
+            var longUnidirectionalHtml = gpii.tests.binder.long.unidirectional.html(".viewport-long-unidirectional-html");
             var short       = gpii.tests.binder.short(".viewport-short");
+            var shortUnidirectional = gpii.tests.binder.short.unidirectional(".viewport-short-unidirectional");
+            var shortUnidirectionalText = gpii.tests.binder.short.unidirectional.text(".viewport-short-unidirectional-text");
+            var shortUnidirectionalHtml = gpii.tests.binder.short.unidirectional.html(".viewport-short-unidirectional-html");
             var array       = gpii.tests.binder.array(".viewport-array");
             var toBeCleared = gpii.tests.binder.toBeCleared(".viewport-toBeCleared");
             var textarea    = gpii.tests.binder.long(".viewport-textarea");

@@ -46,6 +46,110 @@ fluid.defaults("gpii.tests.binder.long", {
     }
 });
 
+// Component to test "long notation w/ unidirectional = true"
+fluid.defaults("gpii.tests.binder.long.unidirectional", {
+    gradeNames: ["gpii.tests.binder.base"],
+    bindings: {
+        initFromModel: {
+            selector: "initFromModel",
+            path:     "initFromModel",
+            unidirectional: true
+        },
+        initFromMarkup: {
+            selector: "initFromMarkup",
+            path:     "initFromMarkup",
+            unidirectional: true
+        },
+        updateFromModel: {
+            selector: "updateFromModel",
+            path:     "updateFromModel",
+            unidirectional: true
+        },
+        updateFromMarkup: {
+            selector: "updateFromMarkup",
+            path:     "updateFromMarkup",
+            unidirectional: true
+        }
+    }
+});
+
+// Component to test "long notation w/ unidirectional = true and method = fluid.text"
+fluid.defaults("gpii.tests.binder.long.unidirectional.text", {
+    gradeNames: ["gpii.tests.binder.base"],
+    selectors: {
+        initFromModel:    ".init-from-model",
+        initFromMarkup:   ".init-from-markup",
+        updateFromModel:  ".update-from-model",
+        updateFromMarkup: ".update-from-markup"
+    },
+    bindings: {
+        initFromModel: {
+            selector: "initFromModel",
+            path:     "initFromModel",
+            unidirectional: true,
+            method: "fluid.text"
+        },
+        initFromMarkup: {
+            selector: "initFromMarkup",
+            path:     "initFromMarkup",
+            unidirectional: true,
+            method: "fluid.text"
+        },
+        updateFromModel: {
+            selector: "updateFromModel",
+            path:     "updateFromModel",
+            unidirectional: true,
+            method: "fluid.text"
+        },
+        updateFromMarkup: {
+            selector: "updateFromMarkup",
+            path:     "updateFromMarkup",
+            unidirectional: true,
+            method: "fluid.text"
+        }
+    }
+});
+
+
+
+
+// Component to test "long notation w/ unidirectional = true and method = fluid.html"
+fluid.defaults("gpii.tests.binder.long.unidirectional.html", {
+    gradeNames: ["gpii.tests.binder.base"],
+    selectors: {
+        initFromModel:    ".init-from-model",
+        initFromMarkup:   ".init-from-markup",
+        updateFromModel:  ".update-from-model",
+        updateFromMarkup: ".update-from-markup"
+    },
+    bindings: {
+        initFromModel: {
+            selector: "initFromModel",
+            path:     "initFromModel",
+            unidirectional: true,
+            method: "fluid.html"
+        },
+        initFromMarkup: {
+            selector: "initFromMarkup",
+            path:     "initFromMarkup",
+            unidirectional: true,
+            method: "fluid.html"
+        },
+        updateFromModel: {
+            selector: "updateFromModel",
+            path:     "updateFromModel",
+            unidirectional: true,
+            method: "fluid.html"
+        },
+        updateFromMarkup: {
+            selector: "updateFromMarkup",
+            path:     "updateFromMarkup",
+            unidirectional: true,
+            method: "fluid.html"
+        }
+    }
+});
+
 
 // Component to test "short notation"
 fluid.defaults("gpii.tests.binder.short", {
@@ -57,6 +161,63 @@ fluid.defaults("gpii.tests.binder.short", {
         updateFromMarkup: "updateFromMarkup"
     }
 });
+
+// Component to test "short notation w/ unidirectional default"
+fluid.defaults("gpii.tests.binder.short.unidirectional", {
+    gradeNames: ["gpii.tests.binder.base"],
+    bindingOptions: {
+        unidirectional: true
+    },
+    bindings: {
+        initFromModel:    "initFromModel",
+        initFromMarkup:   "initFromMarkup",
+        updateFromModel:  "updateFromModel",
+        updateFromMarkup: "updateFromMarkup"
+    }
+});
+
+// Component to test "short notation w/ unidirectional and text default"
+fluid.defaults("gpii.tests.binder.short.unidirectional.text", {
+    gradeNames: ["gpii.tests.binder.base"],
+    selectors: {
+        initFromModel:    ".init-from-model",
+        initFromMarkup:   ".init-from-markup",
+        updateFromModel:  ".update-from-model",
+        updateFromMarkup: ".update-from-markup"
+    },
+    bindingOptions: {
+        unidirectional: true,
+        method: "fluid.text"
+    },
+    bindings: {
+        initFromModel:    "initFromModel",
+        initFromMarkup:   "initFromMarkup",
+        updateFromModel:  "updateFromModel",
+        updateFromMarkup: "updateFromMarkup"
+    }
+});
+
+// Component to test "short notation w/ unidirectional and html default"
+fluid.defaults("gpii.tests.binder.short.unidirectional.html", {
+    gradeNames: ["gpii.tests.binder.base"],
+    selectors: {
+        initFromModel:    ".init-from-model",
+        initFromMarkup:   ".init-from-markup",
+        updateFromModel:  ".update-from-model",
+        updateFromMarkup: ".update-from-markup"
+    },
+    bindingOptions: {
+        unidirectional: true,
+        method: "fluid.html"
+    },
+    bindings: {
+        initFromModel:    "initFromModel",
+        initFromMarkup:   "initFromMarkup",
+        updateFromModel:  "updateFromModel",
+        updateFromMarkup: "updateFromMarkup"
+    }
+});
+
 
 // Component to test array notation.
 //
