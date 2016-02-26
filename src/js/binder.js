@@ -19,17 +19,29 @@
      *
      * The main function to create bindings between markup and model elements.  See above for usage details.
      *
-     * @param that - A fluid viewComponent with `options.bindings` and `options.selectors` defined.
+     * @param that - A fluid viewComponent with `options.bindings` and `options.selectors` defined. Optionally defines `options.bindingOptions`
      *
      *
      */
     gpii.binder.applyBinding = function (that) {
         var bindings = that.options.bindings;
         fluid.each(bindings, function (value, key) {
+            var isShortNotation = typeof value === "string" ? true : false;
+
             var path = typeof value === "string" ? value : value.path;
             var selector = typeof value === "string" ? key : value.selector;
-            var unidirectional = typeof value === "string" ? false : value.unidirectional || false;
-            var elementAccessFunction = typeof value === "string" ? "value" : fluid.getGlobalValue(value.method) || fluid.value;
+            var unidirectional = false;
+            var elementAccessFunction = fluid.value;
+
+            // in short notation, use default bindingOptions if specified on the component
+            if (isShortNotation && (typeof that.options.bindingOptions !== "undefined")) {
+                unidirectional = typeof that.options.bindingOptions.unidirectional === "undefined" ? unidirectional : that.options.bindingOptions.unidirectional;
+                elementAccessFunction = typeof that.options.bindingOptions.method === "undefined" ? elementAccessFunction : fluid.getGlobalValue(that.options.bindingOptions.method);
+            } else {
+                // In long notation, use the binding specific unidirectional and element access method if provided
+                unidirectional = typeof value.unidirectional === "undefined" ? unidirectional : value.unidirectional;
+                elementAccessFunction = typeof value.method === "undefined" ? elementAccessFunction : fluid.getGlobalValue(value.method);
+            }
 
             var element = that.locate(selector);
 
