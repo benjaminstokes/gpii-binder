@@ -7,18 +7,18 @@ fluid.registerNamespace("gpii.tests.binder");
 fluid.defaults("gpii.tests.binder.base", {
     gradeNames: ["fluid.viewComponent"],
     model: {
-        initFromModel:    "initialized from model" // The markup will be initialized with this value.
+        initFromModel: "initialized from model" // The markup will be initialized with this value.
     },
     selectors: {
-        initFromModel:    "[name='init-from-model']",
-        initFromMarkup:   "[name='init-from-markup']",
-        updateFromModel:  "[name='update-from-model']",
+        initFromModel: "[name='init-from-model']",
+        initFromMarkup: "[name='init-from-markup']",
+        updateFromModel: "[name='update-from-model']",
         updateFromMarkup: "[name='update-from-markup']"
     },
     listeners: {
         "onCreate.applyBinding": {
             funcName: "gpii.binder.applyBinding",
-            args:     ["{that}"]
+            args: ["{that}"]
         }
     }
 });
@@ -29,123 +29,52 @@ fluid.defaults("gpii.tests.binder.long", {
     bindings: {
         initFromModel: {
             selector: "initFromModel",
-            path:     "initFromModel"
+            path: "initFromModel"
         },
         initFromMarkup: {
             selector: "initFromMarkup",
-            path:     "initFromMarkup"
+            path: "initFromMarkup"
         },
         updateFromModel: {
             selector: "updateFromModel",
-            path:     "updateFromModel"
+            path: "updateFromModel"
         },
         updateFromMarkup: {
             selector: "updateFromMarkup",
-            path:     "updateFromMarkup"
+            path: "updateFromMarkup"
         }
     }
 });
 
-// Component to test "long notation w/ unidirectional = true"
-fluid.defaults("gpii.tests.binder.long.unidirectional", {
-    gradeNames: ["gpii.tests.binder.base"],
-    bindings: {
-        initFromModel: {
-            selector: "initFromModel",
-            path:     "initFromModel",
-            unidirectional: true
-        },
-        initFromMarkup: {
-            selector: "initFromMarkup",
-            path:     "initFromMarkup",
-            unidirectional: true
-        },
-        updateFromModel: {
-            selector: "updateFromModel",
-            path:     "updateFromModel",
-            unidirectional: true
-        },
-        updateFromMarkup: {
-            selector: "updateFromMarkup",
-            path:     "updateFromMarkup",
-            unidirectional: true
-        }
-    }
-});
-
-// Component to test "long notation w/ unidirectional = true and method = fluid.text"
-fluid.defaults("gpii.tests.binder.long.unidirectional.text", {
+// Component to test "long notation w/ text"
+fluid.defaults("gpii.tests.binder.long.text", {
     gradeNames: ["gpii.tests.binder.base"],
     selectors: {
-        initFromModel:    ".init-from-model",
-        initFromMarkup:   ".init-from-markup",
-        updateFromModel:  ".update-from-model",
+        initFromModel: ".init-from-model",
+        initFromMarkup: ".init-from-markup",
+        updateFromModel: ".update-from-model",
         updateFromMarkup: ".update-from-markup"
     },
     bindings: {
         initFromModel: {
             selector: "initFromModel",
-            path:     "initFromModel",
-            unidirectional: true,
-            method: "fluid.text"
+            path: "initFromModel",
+            method: "text"
         },
         initFromMarkup: {
             selector: "initFromMarkup",
-            path:     "initFromMarkup",
-            unidirectional: true,
-            method: "fluid.text"
+            path: "initFromMarkup",
+            method: "text"
         },
         updateFromModel: {
             selector: "updateFromModel",
-            path:     "updateFromModel",
-            unidirectional: true,
-            method: "fluid.text"
+            path: "updateFromModel",
+            method: "text"
         },
         updateFromMarkup: {
             selector: "updateFromMarkup",
-            path:     "updateFromMarkup",
-            unidirectional: true,
-            method: "fluid.text"
-        }
-    }
-});
-
-
-
-
-// Component to test "long notation w/ unidirectional = true and method = fluid.html"
-fluid.defaults("gpii.tests.binder.long.unidirectional.html", {
-    gradeNames: ["gpii.tests.binder.base"],
-    selectors: {
-        initFromModel:    ".init-from-model",
-        initFromMarkup:   ".init-from-markup",
-        updateFromModel:  ".update-from-model",
-        updateFromMarkup: ".update-from-markup"
-    },
-    bindings: {
-        initFromModel: {
-            selector: "initFromModel",
-            path:     "initFromModel",
-            unidirectional: true,
-            method: "fluid.html"
-        },
-        initFromMarkup: {
-            selector: "initFromMarkup",
-            path:     "initFromMarkup",
-            unidirectional: true,
-            method: "fluid.html"
-        },
-        updateFromModel: {
-            selector: "updateFromModel",
-            path:     "updateFromModel",
-            unidirectional: true,
-            method: "fluid.html"
-        },
-        updateFromMarkup: {
-            selector: "updateFromMarkup",
-            path:     "updateFromMarkup",
-            unidirectional: true,
-            method: "fluid.html"
+            path: "updateFromMarkup",
+            method: "text"
         }
     }
 });
@@ -155,65 +84,29 @@ fluid.defaults("gpii.tests.binder.long.unidirectional.html", {
 fluid.defaults("gpii.tests.binder.short", {
     gradeNames: ["gpii.tests.binder.base"],
     bindings: {
-        initFromModel:    "initFromModel",
-        initFromMarkup:   "initFromMarkup",
-        updateFromModel:  "updateFromModel",
+        initFromModel: "initFromModel",
+        initFromMarkup: "initFromMarkup",
+        updateFromModel: "updateFromModel",
         updateFromMarkup: "updateFromMarkup"
     }
 });
 
-// Component to test "short notation w/ unidirectional default"
-fluid.defaults("gpii.tests.binder.short.unidirectional", {
-    gradeNames: ["gpii.tests.binder.base"],
-    bindingOptions: {
-        unidirectional: true
-    },
-    bindings: {
-        initFromModel:    "initFromModel",
-        initFromMarkup:   "initFromMarkup",
-        updateFromModel:  "updateFromModel",
-        updateFromMarkup: "updateFromMarkup"
-    }
-});
-
-// Component to test "short notation w/ unidirectional and text default"
-fluid.defaults("gpii.tests.binder.short.unidirectional.text", {
+// Component to test "short notation w/ text"
+fluid.defaults("gpii.tests.binder.short.text", {
     gradeNames: ["gpii.tests.binder.base"],
     selectors: {
-        initFromModel:    ".init-from-model",
-        initFromMarkup:   ".init-from-markup",
-        updateFromModel:  ".update-from-model",
+        initFromModel: ".init-from-model",
+        initFromMarkup: ".init-from-markup",
+        updateFromModel: ".update-from-model",
         updateFromMarkup: ".update-from-markup"
     },
     bindingOptions: {
-        unidirectional: true,
-        method: "fluid.text"
+        method: "text"
     },
     bindings: {
-        initFromModel:    "initFromModel",
-        initFromMarkup:   "initFromMarkup",
-        updateFromModel:  "updateFromModel",
-        updateFromMarkup: "updateFromMarkup"
-    }
-});
-
-// Component to test "short notation w/ unidirectional and html default"
-fluid.defaults("gpii.tests.binder.short.unidirectional.html", {
-    gradeNames: ["gpii.tests.binder.base"],
-    selectors: {
-        initFromModel:    ".init-from-model",
-        initFromMarkup:   ".init-from-markup",
-        updateFromModel:  ".update-from-model",
-        updateFromMarkup: ".update-from-markup"
-    },
-    bindingOptions: {
-        unidirectional: true,
-        method: "fluid.html"
-    },
-    bindings: {
-        initFromModel:    "initFromModel",
-        initFromMarkup:   "initFromMarkup",
-        updateFromModel:  "updateFromModel",
+        initFromModel: "initFromModel",
+        initFromMarkup: "initFromMarkup",
+        updateFromModel: "updateFromModel",
         updateFromMarkup: "updateFromMarkup"
     }
 });
@@ -230,19 +123,19 @@ fluid.defaults("gpii.tests.binder.array", {
     bindings: [
         {
             selector: "initFromModel",
-            path:     "initFromModel"
+            path: "initFromModel"
         },
         {
             selector: "initFromMarkup",
-            path:     "initFromMarkup"
+            path: "initFromMarkup"
         },
         {
             selector: "updateFromModel",
-            path:     "updateFromModel"
+            path: "updateFromModel"
         },
         {
             selector: "updateFromMarkup",
-            path:     "updateFromMarkup"
+            path: "updateFromMarkup"
         }
     ]
 });
@@ -253,19 +146,19 @@ fluid.defaults("gpii.tests.binder.radio", {
     bindings: {
         initFromModel: {
             selector: "initFromModel",
-            path:     "initFromModel"
+            path: "initFromModel"
         },
         initFromMarkup: {
             selector: "initFromMarkup",
-            path:     "initFromMarkup"
+            path: "initFromMarkup"
         },
         updateFromModel: {
             selector: "updateFromModel",
-            path:     "updateFromModel"
+            path: "updateFromModel"
         },
         updateFromMarkup: {
             selector: "updateFromMarkup",
-            path:     "updateFromMarkup"
+            path: "updateFromMarkup"
         }
     }
 });
@@ -282,23 +175,23 @@ fluid.defaults("gpii.tests.binder.checkbox", {
     bindings: {
         initFromModel: {
             selector: "initFromModel",
-            path:     "initFromModel"
+            path: "initFromModel"
         },
         initFromMarkup: {
             selector: "initFromMarkup",
-            path:     "initFromMarkup"
+            path: "initFromMarkup"
         },
         updateFromModel: {
             selector: "updateFromModel",
-            path:     "updateFromModel"
+            path: "updateFromModel"
         },
         updateFromMarkup: {
             selector: "updateFromMarkup",
-            path:     "updateFromMarkup"
+            path: "updateFromMarkup"
         },
         array: {
             selector: "array",
-            path:     "array"
+            path: "array"
         }
     }
 });
@@ -317,7 +210,7 @@ fluid.defaults("gpii.tests.binder.toBeCleared", {
     listeners: {
         "onCreate.applyBinding": {
             funcName: "gpii.binder.applyBinding",
-            args:     ["{that}"]
+            args: ["{that}"]
         }
     }
 });
